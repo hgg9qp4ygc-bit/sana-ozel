@@ -1,0 +1,301 @@
+/* style.css */
+
+/* Genel sayfa ayarları */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #4a4a4a;
+    background: linear-gradient(-45deg, #fff5f7, #ffd1dc, #fce4ec, #ffffff);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Sitenin ana kutusu */
+.container {
+    background: rgba(255, 255, 255, 0.2); /* Şeffaf beyaz */
+    backdrop-filter: blur(15px); /* Arkadaki kalpleri bulanıklaştırır */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+/* Başlık stili */
+h1 {
+    color: #d81b60;
+    font-size: 26px;
+    margin-bottom: 10px;
+}
+
+/* Beraber çekildiğiniz fotoğrafın stili */
+.profil-foto {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; /* Yuvarlak yapar */
+    border: 5px solid #ff4081;
+    object-fit: cover; /* Fotoğrafın yamulmasını engeller */
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Kalp ve Atış Animasyonu */
+.kalp {
+    font-size: 45px;
+    color: #ff4081;
+    display: inline-block;
+    margin: 15px 0;
+    animation: beat 0.3s infinite alternate; /* Kalp atış hızı */
+    transform-origin: center;
+}
+
+@keyframes beat {
+    to { transform: scale(1.25); } /* Kalp %25 büyür */
+}
+
+/* Sayaç kutusunun stili */
+#sayac {
+    font-size: 19px;
+    font-weight: bold;
+    color: #2d3436;
+    background: #fce4ec;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+    border: 1px dashed #ff4081;
+    line-height: 1.5;
+}
+
+/* Buton stili */
+button {
+    background-color: #ff4081;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 15px rgba(255, 64, 129, 0.3);
+}
+
+/* Fareyle butonun üzerine gelince olacaklar */
+button:hover {
+    background-color: #d81b60;
+    transform: scale(1.05); /* Hafif büyür */
+    box-shadow: 0 6px 20px rgba(216, 27, 96, 0.4);
+}
+
+/* Butona basıldığı an */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Kayan kalplerin stili */
+.floating-heart {
+    position: fixed;
+    bottom: -10px;
+    color: #ff4081;
+    font-size: 20px;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1; /* Yazıların arkasında kalsın */
+    animation: floatUp 5s linear forwards;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+}
+
+/* Galeri Alanı */
+.galeri {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2x2 düzeninde dizer */
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.galeri-foto {
+    width: 100%;
+    height: 120px;
+    object-fit: cover; 
+    border-radius: 10px;
+    border: 2px solid #ff80ab;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    background-color: white;
+    padding: 8px; 
+    padding-bottom: 20px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transform: rotate(-2deg); 
+}
+
+.galeri-foto:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+/* Fotoğrafın üzerine gelince büyüme efekti */
+.galeri-foto:hover {
+    transform: scale(1.1);
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+#sifre-ekrani {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.sifre-kutu {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    padding: 40px;
+    border-radius: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    color: white;
+}
+
+.sifre-kalp {
+    font-size: 50px;
+    margin-bottom: 20px;
+    animation: pulse 1.5s infinite;
+}
+
+#sifre-input {
+    width: 80%;
+    padding: 12px;
+    margin: 20px 0;
+    border-radius: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    font-size: 18px;
+    outline: none;
+}
+
+.sifre-kutu button {
+    background: #d81b60;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.sifre-kutu button:hover {
+    background: #ad1457;
+    transform: scale(1.05);
+}
+
+/* Tam Ekran Kutusu Stili */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    cursor: zoom-out;
+    align-items: center;
+    justify-content: center;
+}
+
+#tam-ekran-foto {
+    max-width: 90%;
+    max-height: 80%;
+    border: 5px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.parilti {
+    position: fixed;
+    pointer-events: none;
+    background: #ff4081;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    z-index: 9999;
+    animation: parla 0.8s ease-out forwards;
+}
+
+@keyframes parla {
+    0% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(3); opacity: 0; }
+}
+
+body {
+    cursor: url('https://cur.cursors-4u.net/symbols/sym-9/sym833.cur'), auto !important;
+}
+
+.love-meter-konteynir {
+    margin: 40px 0;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+/* Kaydırma çubuğunun tasarımı */
+.slider {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 10px;
+    border-radius: 5px;
+    background: #ffd1dc;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Çubuğun üzerindeki yuvarlak butonun tasarımı */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #ff4081;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 64, 129, 0.5);
+}
+
+#loveResult {
+    font-size: 20px;
+    font-weight: bold;
+    color: #d81b60;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+#love-heart-scale {
+    font-size: 30px;
+    margin-top: 10px;
+    transition: transform 0.2s ease-out; /* Kalbin büyüme animasyonu */
+}
