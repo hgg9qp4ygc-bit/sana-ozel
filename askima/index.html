@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sadece Senin İçin ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+   <div id="sifre-ekrani">
+    <div class="sifre-kutu">
+        <div class="sifre-kalp">❤️</div>
+        <h2>Özel Bir Giriş</h2>
+        <p>siteye girmek için şifreyi gir aşkım</p>
+        <input type="password" id="sifre-input" placeholder="çıkma tarihimiz (ggaayyyy)" />
+        <button onclick="sifreyiKontrolEt()">Kilidi Aç</button>
+    </div>
+</div>
+</div>
+
+<div id="ana-icerik" style="display: none;">
+    </div>
+
+    <div class="container">
+        <img src="images/4.jpeg" alt="Bizim Fotoğrafımız" class="profil-foto">
+        
+        <h1 id="selamlama-mesaji">Yükleniyor...</h1>
+        <p>Seninle geçen her saniye benim için çok değerli.</p>
+
+        <div class="kalp">❤️</div>
+
+        <p><strong>Birlikteliğimizin üzerinden;</strong></p>
+        <div id="sayac">Hesaplanıyor...</div>
+
+        <div class="galeri">
+    <img src="images/1.jpeg" alt="Anı 1" class="galeri-foto">
+    <img src="images/2.jpeg" alt="Anı 2" class="galeri-foto">
+    <img src="images/3.jpeg" alt="Anı 3" class="galeri-foto">
+    <img src="images/4.jpeg" alt="Anı 4" class="galeri-foto">
+</div>
+
+        <button onclick="surpriz()">Bana Tıkla ✨</button>
+
+        <div class="soru-konteynir" style="margin-top: 100px; height: 300px; position: relative;">
+        <h3>beni seviyon mu ❤️</h3>
+        
+        <button onclick="alert('tabi sevcen ossuruk seni')" style="margin-right: 20px;">EVET</button>
+        
+        <button id="hayir-butonu" onmouseover="butonuKacir()" style="position: absolute;">HAYIR</button>
+    </div>
+
+    <div class="love-meter-konteynir">
+    <h3>Beni ne kadar seviyorsun? 🤔</h3>
+    
+    <input type="range" min="1" max="100" value="50" class="slider" id="loveRange">
+    
+    <p id="loveResult">Çok Seviyorum ❤️</p>
+    
+    <div id="love-heart-scale">❤️</div>
+</div>
+
+    <div id="soz-alani" style="font-style: italic; color: #d81b60; margin-top: 20px;">
+    "Seninle her şey daha güzel..."
+</div>
+
+    <div class="sebep-kutu" style="margin-top: 30px; padding: 15px; border: 1px dashed #ff4081; border-radius: 15px;">
+    <p id="sebep-metni">seni neden sevdiğimi öğrenmek istiyosan tıkla yavru</p>
+    <button onclick="yeniSebep()" style="padding: 8px 15px; font-size: 14px;">sebep??</button>
+</div>
+
+    <div id="lightbox" onclick="this.style.display='none'">
+    <img id="tam-ekran-foto" src="" alt="Tam Ekran">
+</div>
+     
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
