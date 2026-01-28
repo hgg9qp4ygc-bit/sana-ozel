@@ -299,3 +299,45 @@ body {
     margin-top: 10px;
     transition: transform 0.2s ease-out; /* Kalbin büyüme animasyonu */
 }
+
+/* --- TELEFON AYARLARI --- */
+@media (max-width: 600px) {
+    .container {
+        width: 95%; /* Kenarlarda çok az boşluk bırak */
+        padding: 15px;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 20px; /* Başlığı biraz küçült */
+    }
+
+    .profil-foto {
+        width: 120px;
+        height: 120px;
+    }
+
+    .galeri {
+        grid-template-columns: repeat(2, 1fr); /* Yine 2'li kalsın ama daha sıkışık */
+        gap: 8px;
+    }
+
+    .galeri-foto {
+        height: 100px; /* Fotoğraflar ekrana sığsın */
+    }
+
+    #sayac {
+        font-size: 16px; /* Sayaç yazısı taşmasın */
+        padding: 10px;
+    }
+
+    .sifre-kutu {
+        width: 85%;
+        padding: 20px;
+    }
+
+    #hayir-butonu {
+        /* Mobilde butonun çok uzaklara kaçmasını engeller */
+        position: absolute; 
+    }
+}
